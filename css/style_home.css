@@ -4,10 +4,9 @@ body {
     padding: 2rem;
     text-align: center;
     background-color: #f9f9f9;
-}
-h1 {
     color: #333;
 }
-h2 {
-    color:#555;
+.dark-mode {
+    background-color: #222;
+    color: white;
 }
