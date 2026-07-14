@@ -100,3 +100,25 @@ body.dark-mode .item:hover {
 body.dark-mode .item a {
     color: #1e90ff;
 }
+.hero {
+    text-align: center;
+    margin: 3rem 0;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+.subtitle {
+    font-size: 1.4rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+.description {
+    color: #999;
+}
+body.dark-mode .subtitle {
+    color: #ddd;
+}
+body.dark-mode .description {
+    color: #aaa;
+}
