@@ -71,3 +71,32 @@ body {
 #hamburger-menu.show {
     left: 0;
 }
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+.item {
+    flex: 1 1 300px;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+body.dark-mode .item {
+    background-color: #333;
+    color: white;
+}
+body.dark-mode .item:hover {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+body.dark-mode .item a {
+    color: #1e90ff;
+}
