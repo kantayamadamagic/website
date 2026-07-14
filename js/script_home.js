@@ -16,7 +16,7 @@ hamburgerButton.addEventListener("click", function () {
     hamburgerMenu.classList.toggle("show");
     if (hamburgerMenu.classList.contains("show")) {
         // メニューが表示された
-        document.getElementById("hamburger-button").textContent = "×";
+        document.getElementById("hamburger-button").textContent = "✖";
     } else {
         // メニューが非表示になった
         document.getElementById("hamburger-button").textContent = "☰";
