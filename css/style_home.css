@@ -6,7 +6,68 @@ body {
     background-color: #f9f9f9;
     color: #333;
 }
+#dark-button {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+#dark-button:hover {
+    background-color: #555;
+}
 .dark-mode {
     background-color: #222;
     color: white;
+}
+#hamburger-button {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+#hamburger-button:hover {
+    background-color: #555;
+}
+#hamburger-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;  
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    z-index: 1000;
+    text-align: left;
+    transition: left 0.3s;
+}
+#hamburger-menu ul {
+    list-style-type: none;
+    padding: 80px 0 0 0;
+    margin: 0;
+}
+#hamburger-menu li {
+    padding: 1rem;
+    border-bottom: 1px solid #444;
+}
+#hamburger-menu li a {
+    color: white;
+    text-decoration: none;
+}
+#hamburger-menu li a:hover {
+    text-decoration: underline;
+}
+#hamburger-menu.show {
+    left: 0;
 }
