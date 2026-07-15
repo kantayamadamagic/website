@@ -22,3 +22,19 @@ hamburgerButton.addEventListener("click", function () {
         document.getElementById("hamburger-button").textContent = "☰";
     }
 });
+
+const albumTitles = document.querySelectorAll(".album-title");
+const arrows = document.querySelectorAll(".arrow");
+albumTitles.forEach(function (title) {
+    title.addEventListener("click", function () {
+        const trackList = this.nextElementSibling;
+        trackList.classList.toggle("show");
+        if (trackList.classList.contains("show")) {
+            // トラックリストが表示された
+            this.querySelector(".arrow").textContent = "▲";
+        } else {
+            // トラックリストが非表示になった
+            this.querySelector(".arrow").textContent = "▼";
+        }
+    });
+});
