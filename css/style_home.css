@@ -154,3 +154,13 @@ body.dark-mode .description {
     margin-right: 0.5rem;
     transition: transform 0.3s;
 }
+.item details summary {
+    cursor: pointer;
+}
+.item details summary:hover {
+    text-decoration: underline;
+}
+.item details ul {
+    list-style-type: none;
+    padding-left: 1.5rem;
+}
