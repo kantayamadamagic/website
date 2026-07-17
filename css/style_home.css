@@ -164,3 +164,55 @@ body.dark-mode .description {
     list-style-type: none;
     padding-left: 1.5rem;
 }
+.news {
+    max-width: 600px;
+    margin: 3rem auto;
+    text-align: left;
+}
+.news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    max-height: 220px;
+    overflow-y: auto;
+}
+.news-list li {
+    display: flex;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #ccc;
+}
+.news-list time {
+    width: 100px;
+    flex-shrink: 0;
+    font-weight: bold;
+}
+.news-list span {
+    flex: 1;
+}
+.news-list li:first-child {
+    font-weight: bold;
+}
+#top-button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+#top-button:hover {
+    background-color: #555;
+}
+footer {
+    margin-top: 2rem;
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
