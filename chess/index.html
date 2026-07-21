@@ -10,9 +10,34 @@
 </head>
 <body>
     <header class="hero">
-        <h1>ここにチェス盤が表示されます。</h1>
+        <h1>チェス</h1>
     </header>
-    <div id="board"></div>
+    <div class="game-container">
+        <div id="board"></div>
+        <div class="sside-panel">
+            <div class="panel">
+                <h2>Status</h2>
+                <p id="status">White to move</p>
+            </div>
+            <div class="panel">
+                <div id="history-container">
+                    <table id="pgn">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>White</th>
+                                <th>Black</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-body"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel">
+                <button id="new-game">New Game</button>
+            </div>
+        </div>
+    </div>
     <script type="module" src="js/script.js"></script>
 </body>
 </html>
