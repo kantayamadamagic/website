@@ -11,6 +11,8 @@ const board =new Chessboard(document .getElementById("board"), {
 const status = document.getElementById("status");
 const newGameButton = document.getElementById("new-game");
 const tbody = document.getElementById("history-body");
+const modal = document.getElementById("new-game-modal");
+const startButton = document.getElementById("start-game");
 tbody.innerHTML = "";
 const whitePieceMap = {
     p:"♙",
@@ -26,6 +28,9 @@ const blackPieceMap = {
     r:"♜",
     q:"♛"
 }
+let humanColor = ""
+let computerColor = "";
+let difficulty = 0;
 board.enableMoveInput(inputHandler); // This enables the move input
 
 function makeMove(move){
@@ -38,7 +43,7 @@ function makeMove(move){
         gameOver();
         return;
     }
-    if(chess.turn() === "b"){
+    if(chess.turn() === computerColor){
         setTimeout(() => {
             computerMove();
         }, 300);
@@ -72,7 +77,7 @@ function updateHistory(){
 function gameOver(){
     if(chess.isCheckmate()){
         if(chess.turn() === "w"){
-            status.innerHTML = `<strong>Checkmate!</strong><br>White wins.`;
+            status.innerHTML = `<strong>Checkmate!</strong><br>Black wins.`;
         } else {
             status.innerHTML = `<strong>Checkmate!</strong><br>White wins.`;
         }
@@ -97,13 +102,40 @@ function newGame(){
         board.enableMoveInput(inputHandler);
     } catch {}
 }
-function computerMove(){
-    const moves = chess.moves({verbose: true});
-    const move = moves[Math.random()*moves.length];
-    makeMove(move);
+async function computerMove(){
+    try{
+        const response = await fetch("https://chess-api.com/v1",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fen: chess.fen(),
+                deth: difficulty
+            })
+        });
+        const data = await response.json();
+        makeMove({from: data.from, to:data.to, promotion: data.promotion});
+    } catch (error){
+        console.error(error);
+    }
 }
-
-newGameButton.addEventListener("click", newGame);
+startButton.addEventListener("click", () => {
+    modal.style.display = "none";
+    newGame();
+    humanColor = document.querySelector('input[name="color"]:checked').value;
+    if(humanColor === "random"){
+        humanColor = Math.random() < 0.5 ? "w" : "b";
+    }
+    computerColor = humanColor === "w" ? "b" : "w";
+    difficulty = Number(document.querySelector('input[name="difficulty"]:checked').value);
+    if(computerColor === "w"){
+        computerMove();
+    }
+});
+newGameButton.addEventListener("click", () => {
+    modal.style.display = "flex";
+});
 
 function inputHandler(event) {
     if(event.type === INPUT_EVENT_TYPE.moveInputStarted) {

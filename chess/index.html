@@ -38,6 +38,43 @@
             </div>
         </div>
     </div>
+    <div id="new-game-modal" class="modal">
+        <div class="modal-content">
+            <h2>New Game</h2>
+            <h3>Play as</h3>
+            <label>
+                <input type="radio" name="color" value="w" checked>
+                White
+            </label><br>
+            <label>
+                <input type="radio" name="color" value="b">
+                Black
+            </label><br>
+            <label>
+                <input type="radio" name="color" value="random">
+                Random
+            </label>
+            <h3>Difficulty</h3>
+            <label>
+                <input type="radio" name="difficulty" value="3">
+                Easy
+            </label><br>
+            <label>
+                <input type="radio" name="difficulty" value="6" checked>
+                Normal
+            </label><br>
+            <label>
+                <input type="radio" name="difficulty" value="10">
+                Hard
+            </label><br>
+            <label>
+                <input type="radio" name="difficulty" value="15">
+                Expert
+            </label>
+            <br><br>
+            <button id="start-game">Start Game</button>
+        </div>
+    </div>
     <script type="module" src="js/script.js"></script>
 </body>
 </html>
