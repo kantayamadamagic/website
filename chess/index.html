@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山田寛太 | Chess</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cm-chessboard@8.12.12/assets/chessboard.css">
+    <link rel="icon" href="images/favicon.ico">
+</head>
+<body>
+    <header class="hero">
+        <h1>♔ Chess</h1>
+        <p>Play against the computer powered by Stockfish</p>
+    </header>
+    <div class="game-container">
+        <div class="board-area">
+            <div id="captured-top" class="captured">
+                <span id="captured-top-pieces"></span>
+                <span id="captured-top-score" class="score"></span>
+            </div>
+            <div id="board"></div>
+            <div id="captured-bottom" class="captured">
+                <span id="captured-bottom-pieces"></span>
+                <span id="captured-bottom-score" class="score"></span>
+            </div>
+        </div>
+        <div class="side-panel">
+            <div class="panel">
+                <h2>Status</h2>
+                <p id="status">White to move</p>
+            </div>
+            <div class="panel">
+                <div id="history-container">
+                    <table id="pgn">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>White</th>
+                                <th>Black</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-body"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel">
+                <button id="new-game">New Game</button>
+            </div>
+            <div class="panel">
+                <h2>Links</h2>
+                <a href="../index.html" target="_blank">
+                    🏠 Home
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="new-game-modal" class="modal">
+        <div class="modal-content">
+            <h2>New Game</h2>
+            <h3>Play as</h3>
+            <label>
+                <input type="radio" name="color" value="w" checked>
+                White
+            </label><br>
+            <label>
+                <input type="radio" name="color" value="b">
+                Black
+            </label><br>
+            <label>
+                <input type="radio" name="color" value="random">
+                Random
+            </label>
+            <h3>Difficulty</h3>
+            <label>
+                <input type="radio" name="difficulty" value="1">
+                Easy
+            </label><br>
+            <label>
+                <input type="radio" name="difficulty" value="4" checked>
+                Normal
+            </label><br>
+            <label>
+                <input type="radio" name="difficulty" value="9">
+                Hard
+            </label><br>
+            <label>
+                <input type="radio" name="difficulty" value="15">
+                Expert
+            </label>
+            <br><br>
+            <button id="start-game">Start Game</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 Kanta Yamada</p>
+    </footer>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
