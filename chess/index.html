@@ -10,11 +10,22 @@
 </head>
 <body>
     <header class="hero">
-        <h1>チェス</h1>
+        <h1>♔ Chess</h1>
+        <p>Play against the computer powered by Stockfish</p>
     </header>
     <div class="game-container">
-        <div id="board"></div>
-        <div class="sside-panel">
+        <div class="board-area">
+            <div id="captured-top" class="captured">
+                <span id="captured-top-pieces"></span>
+                <span id="captured-top-score" class="score"></span>
+            </div>
+            <div id="board"></div>
+            <div id="captured-bottom" class="captured">
+                <span id="captured-bottom-pieces"></span>
+                <span id="captured-bottom-score" class="score"></span>
+            </div>
+        </div>
+        <div class="side-panel">
             <div class="panel">
                 <h2>Status</h2>
                 <p id="status">White to move</p>
@@ -36,6 +47,12 @@
             <div class="panel">
                 <button id="new-game">New Game</button>
             </div>
+            <div class="panel">
+                <h2>Links</h2>
+                <a href="../index.html" target="_blank">
+                    🏠 Home
+                </a>
+            </div>
         </div>
     </div>
     <div id="new-game-modal" class="modal">
@@ -56,15 +73,15 @@
             </label>
             <h3>Difficulty</h3>
             <label>
-                <input type="radio" name="difficulty" value="3">
+                <input type="radio" name="difficulty" value="1">
                 Easy
             </label><br>
             <label>
-                <input type="radio" name="difficulty" value="6" checked>
+                <input type="radio" name="difficulty" value="4" checked>
                 Normal
             </label><br>
             <label>
-                <input type="radio" name="difficulty" value="10">
+                <input type="radio" name="difficulty" value="9">
                 Hard
             </label><br>
             <label>
@@ -75,6 +92,9 @@
             <button id="start-game">Start Game</button>
         </div>
     </div>
+    <footer>
+        <p>&copy; 2026 Kanta Yamada</p>
+    </footer>
     <script type="module" src="js/script.js"></script>
 </body>
 </html>
