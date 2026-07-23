@@ -257,6 +257,9 @@ newGameButton.addEventListener("click", () => { //New Gameを押したとき
 
 function inputHandler(event) { //盤面に触ったとき
     if(event.type === INPUT_EVENT_TYPE.moveInputStarted) { //駒を持ったとき
+        if(chess.turn() === computerColor){
+            return false;
+        }
         if (chess.turn() === "w") {
             for (const tront of chess.moves({square: event.squareFrom, verbose: true})) { //動かせるマスにマーカー
                 if (tront.captured !== undefined) {
