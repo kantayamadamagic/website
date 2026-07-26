@@ -1,13 +1,20 @@
 const darkbutton = document.getElementById("dark-button");
-darkbutton.addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
-    if (document.body.classList.contains("dark-mode")) {
-    // ダークモードになった
-        document.getElementById("dark-button").textContent = "☀️ ライトモード";
+const root = document.documentElement;
+function updateDarkButton() {
+    if (root.classList.contains("dark-mode")) {
+        // ダークモードになった
+        darkbutton.textContent = "☀️ ライトモード";
     } else {
         // ライトモードになった
-        document.getElementById("dark-button").textContent = "🌙 ダークモード";
+        darkbutton.textContent = "🌙 ダークモード";
     }
+}
+// js/theme.js が復元したテーマにボタンの表示を合わせる
+updateDarkButton();
+darkbutton.addEventListener("click", function () {
+    root.classList.toggle("dark-mode");
+    localStorage.setItem("theme", root.classList.contains("dark-mode") ? "dark" : "light");
+    updateDarkButton();
 });
 
 const hamburgerButton = document.getElementById("hamburger-button");
@@ -24,7 +31,6 @@ hamburgerButton.addEventListener("click", function () {
 });
 
 const albumTitles = document.querySelectorAll(".album-title");
-const arrows = document.querySelectorAll(".arrow");
 albumTitles.forEach(function (title) {
     title.addEventListener("click", function () {
         const trackList = this.nextElementSibling;
