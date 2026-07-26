@@ -1,6 +1,13 @@
+const isDarkMode = localStorage.getItem("darkMode");
+if (isDarkMode === "true") {
+    document.body.classList.add("dark-mode");
+    document.getElementById("dark-button").textContent = "☀️ ライトモード";
+}
+
 const darkbutton = document.getElementById("dark-button");
 darkbutton.addEventListener("click", function () {
     document.body.classList.toggle("dark-mode");
+    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
     if (document.body.classList.contains("dark-mode")) {
     // ダークモードになった
         document.getElementById("dark-button").textContent = "☀️ ライトモード";
@@ -24,7 +31,6 @@ hamburgerButton.addEventListener("click", function () {
 });
 
 const albumTitles = document.querySelectorAll(".album-title");
-const arrows = document.querySelectorAll(".arrow");
 albumTitles.forEach(function (title) {
     title.addEventListener("click", function () {
         const trackList = this.nextElementSibling;
