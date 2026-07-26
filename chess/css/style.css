@@ -1,11 +1,4 @@
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 2rem;
-    text-align: center;
-    background-color: #f9f9f9;
-    color: #333;
-}
+/* body / footer / ナビ / ダークモードのスタイルは ../css/style_home.css を先に読み込んで共有する */
 #board {
     width: 600px;
     height: 600px;
@@ -23,7 +16,7 @@ body {
     flex-direction: column;
     gap: 1rem;
 }
-#panel {
+.panel {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 1rem;
@@ -59,6 +52,8 @@ body {
     display:flex;
     justify-content:center;
     align-items:center;
+    /* ハンバーガーボタン(1001)より手前に出す */
+    z-index:1002;
 }
 .modal-content{
     background:white;
@@ -88,16 +83,31 @@ body {
     color: #666;
     font-size: 20px;
 }
-footer {
-    margin-top: 2rem;
-    text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
-}
 .marker-last-move {
     fill: rgb(247,236,110);
     fill-opacity: .35;
+}
+.dark-mode .panel {
+    background: #333;
+    border-color: #555;
+}
+.dark-mode .panel a {
+    color: #1e90ff;
+}
+.dark-mode #pgn thead {
+    background: #333;
+}
+.dark-mode #new-game {
+    background: #555;
+    color: white;
+    border: 1px solid #777;
+}
+.dark-mode .modal-content {
+    background: #333;
+    color: white;
+}
+.dark-mode .score {
+    color: #aaa;
 }
 @media (max-width: 900px) {
     .game-container {

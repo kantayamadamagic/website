@@ -20,7 +20,8 @@ body {
 #dark-button:hover {
     background-color: #555;
 }
-.dark-mode {
+/* テーマは js/theme.js が <html> に .dark-mode を付けて切り替える */
+.dark-mode body {
     background-color: #222;
     color: white;
 }
@@ -90,14 +91,14 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
 }
-body.dark-mode .item {
+.dark-mode .item {
     background-color: #333;
     color: white;
 }
-body.dark-mode .item:hover {
+.dark-mode .item:hover {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
-body.dark-mode .item a {
+.dark-mode .item a {
     color: #1e90ff;
 }
 .hero {
@@ -116,10 +117,10 @@ body.dark-mode .item a {
 .description {
     color: #999;
 }
-body.dark-mode .subtitle {
+.dark-mode .subtitle {
     color: #ddd;
 }
-body.dark-mode .description {
+.dark-mode .description {
     color: #aaa;
 }
 .item img {
@@ -192,6 +193,9 @@ body.dark-mode .description {
 }
 .news-list li:first-child {
     font-weight: bold;
+}
+.dark-mode .news-list li {
+    border-bottom-color: #444;
 }
 #top-button {
     position: fixed;
