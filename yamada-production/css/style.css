@@ -50,6 +50,7 @@ ul {
     padding: 0;
     margin: 0;
 }
+/* Header */
 .site-header {
     position: fixed;
     top: 0;
@@ -91,6 +92,7 @@ ul {
     color: var(--accent-color);
     opacity: 1;
 }
+/* Hero */
 .hero {
     display: flex;
     justify-content: left;
@@ -141,6 +143,36 @@ ul {
     font-size: 2rem;
     letter-spacing: 2rem;
     font-weight: 300;
+}
+/* Featured Talents */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.section-subtitle {
+    color: var(--accent);
+    letter-spacing: .3rem;
+    font-size: .9rem;
+    margin-bottom: .5rem;
+}
+.section-title {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+.section-description {
+    color: var(--text-light);
+    max-width: 600px;
+    margin: auto;
+}
+.talent-role {
+    color: var(--accent);
+    display: block;
+    letter-spacing: .15rem;
+    font-size: .85rem;
+    margin-bottom: .5rem;
+}
+.talent-name {
+    margin-bottom: .3rem;
 }
 main {
     min-height: 60vh;
@@ -214,6 +246,15 @@ main {
 }
 .card-text {
     color: var(--text-light);
+}
+.card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+.card img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit:cover;
 }
 .site-footer {
     background: var(--footer);
