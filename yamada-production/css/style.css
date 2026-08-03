@@ -188,6 +188,7 @@ ul {
     font-size: .9rem;
     color: #999;
 }
+/* News */
 .news-list {
     list-style: none;
     padding: 0;
@@ -243,6 +244,23 @@ ul {
     color: white;
     font-size: .75rem;
     letter-spacing: .1em;
+}
+/* About */
+.about-text {
+    max-width: 560px;
+}
+.about-text p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+.about-quote{
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--accent-color);
+    font-weight: 500;
 }
 main {
     min-height: 60vh;
