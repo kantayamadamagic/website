@@ -262,6 +262,12 @@ ul {
     color: var(--accent-color);
     font-weight: 500;
 }
+/* contact */
+.contact-note {
+    margin-top: 2.5rem;
+    font-size: .85rem;
+    color: var(--text-light);
+}
 main {
     min-height: 60vh;
 }
