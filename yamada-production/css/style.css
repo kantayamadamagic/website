@@ -268,6 +268,152 @@ ul {
     font-size: .85rem;
     color: var(--text-light);
 }
+.contact .section-description {
+    margin-bottom: 2rem;
+}
+/* Talents Page */
+.talents-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.7)), url(../img/talents-hero.jpg);
+    background-size: cover;
+    background-position: center;
+    color:white;
+}
+.page-hero-content {
+    max-width: 700px;
+    padding: 2rem;
+}
+.page-hero-content .section-subtitle {
+    margin-bottom: .8rem;
+}
+.page-hero-content h1 {
+    margin: 0 0 1.5rem;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    letter-spacing: .04em;
+}
+.page-hero-content p:last-child {
+    max-width: 600px;
+    margin: 0 auto;
+    color: rgba(255,255,255,.8);
+    line-height: 1.8;
+}
+.talent-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+.filter-button {
+    padding: .65rem 1.4rem;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-size: .85rem;
+    letter-spacing: .08em;
+    cursor: pointer;
+    transition: background .25s ease, color .25s ease, border-color .25s ease;
+}
+.filter-button.active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+.filter-button:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+.filter-button.active:hover {
+    color: white;
+}
+.talent-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+}
+.talent-card {
+    overflow: hidden;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.talent-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, .25);
+    box-shadow: 0 20px 40px rgba(0,0,0,.12);
+}
+.talent-card-image {
+    height: 240px;
+    overflow: hidden;
+}
+.talent-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
+}
+.talent-card:hover .talent-card-image img {
+    transform: scale(1.1);
+}
+.talent-card-content {
+    padding: 1.5rem;
+}
+.talent-card-content h3 {
+    margin: 0 0 .5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.talent-card:hover
+.talent-card-image img {
+    transform: scale(1.04);
+}
+.talent-card-body {
+    padding: 1.5rem, 1.6rem, 1.6rem;
+    position: relative;
+}
+.talent-card-body::before {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 1px;
+    margin-bottom: 1rem;
+    background: var(--accent-color);
+}
+.talent-specialty {
+    margin: .9rem 0 1.4rem;
+    color: var(--text-light);
+    font-size: .85rem;
+    line-height: 1.6;
+}
+.talent-card-body .button {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: .2rem;
+}
+.talent-card-body .talent-name {
+    margin: 0;
+    font-size: 1.45rem;
+    font-weight: 500;
+    letter-spacing: .03em;
+}
+.talent-card-body .talent-role {
+    display: inline-block;
+    margin-top: .45rem;
+    color: var(--accent-color);
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+/* Media Queries */
 main {
     min-height: 60vh;
 }
@@ -401,10 +547,21 @@ main {
     .section{
         padding: 80px 0;
     }
+    .talent-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
 }
 @media (max-width: 768px) {
     .news-item {
         grid-template-columns: 1fr;
         gap: .8rem;
+    }
+    .talent-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .talent-filter {
+        margin-bottom: 2.5rem;
     }
 }
