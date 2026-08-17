@@ -413,6 +413,300 @@ ul {
     letter-spacing: .14em;
     text-transform: uppercase;
 }
+/* ========================================
+   Talent Profile
+   ======================================== */
+/* Profile Hero */
+.talent-profile-hero {
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: minmax(280px, 0.8fr) minmax(320px, 1.2fr);
+    align-items: center;
+    gap: 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10rem 3rem 6rem;
+}
+/* Profile Image */
+.talent-profile-image {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.talent-profile-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.talent-profile-image:hover img {
+    transform: scale(1.02);
+}
+/* Profile Intro */
+.talent-profile-intro {
+    max-width: 600px;
+}
+.profile-label {
+    margin: 0 0 1.5rem;
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+}
+.talent-profile-intro h1 {
+    margin: 0;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+}
+.talent-profile-role {
+    margin: 1.5rem 0 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+}
+.talent-profile-specialty {
+    margin-top: 0.7rem;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+/* Profile Meta */
+.talent-profile-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem 6rem;
+}
+.profile-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+.profile-meta > div {
+    padding: 1.5rem 1rem;
+    border-right: 1px solid var(--border-color);
+}
+.profile-meta > div:last-child {
+    border-right: none;
+}
+.profile-meta span {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--text-light);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+.profile-meta strong {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+/* General Profile Section */
+.profile-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 7rem 3rem;
+}
+/* Section Heading */
+.section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+.section-heading span {
+    color: var(--accent-color);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+.section-heading h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+/* Biography */
+.profile-text {
+    max-width: 720px;
+}
+.profile-text p {
+    margin: 0 0 1.5rem;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 2;
+}
+.profile-text p:last-child {
+    margin-bottom: 0;
+}
+/* Career */
+.career-list {
+    border-top: 1px solid var(--border-color);
+}
+.career-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.career-year {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+.career-item h3 {
+    margin: 0 0 0.3rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.career-item p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.8rem;
+}
+/* Selected Works */
+.works-list {
+    display: flex;
+    flex-direction: column;
+}
+.profile-work {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.work-number {
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+}
+.work-content h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+.work-type {
+    margin: 0 0 0.8rem;
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+.work-content > p:last-child {
+    max-width: 650px;
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+/* News */
+.profile-news-list {
+    border-top: 1px solid var(--border-color);
+}
+.profile-news-item {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 2rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.profile-news-item time {
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+.profile-news-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+/* Profile Contact */
+.profile-contact {
+    margin-top: 3rem;
+    padding: 7rem 2rem;
+    text-align: center;
+    background: var(--card-background);
+}
+.profile-contact > p {
+    margin: 0 0 1rem;
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+.profile-contact h2 {
+    margin: 0 auto 2rem;
+    max-width: 600px;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.3;
+}
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 800px) {
+    .talent-profile-hero {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        min-height: auto;
+        padding-top: 9rem;
+    }
+    .talent-profile-image {
+        max-width: 420px;
+    }
+    .talent-profile-intro {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .profile-meta {
+        grid-template-columns: 1fr;
+    }
+    .profile-meta > div {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .profile-meta > div:last-child {
+        border-bottom: none;
+    }
+}
+@media (max-width: 600px) {
+    .talent-profile-hero {
+        padding: 8rem 1.5rem 4rem;
+    }
+    .talent-profile-info {
+        padding: 0 1.5rem 4rem;
+    }
+    .profile-section {
+        padding: 5rem 1.5rem;
+    }
+    .talent-profile-intro h1 {
+        font-size: 3rem;
+    }
+    .career-item {
+        grid-template-columns: 70px 1fr;
+        gap: 1rem;
+    }
+    .profile-work {
+        grid-template-columns: 40px 1fr;
+        gap: 1rem;
+    }
+    .profile-news-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+}
 /* Media Queries */
 main {
     min-height: 60vh;
@@ -517,7 +811,6 @@ main {
     color: white;
     text-decoration: none;
 }
-
 .footer-links a:hover {
     color: var(--accent-color);
 }
